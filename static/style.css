@@ -1,0 +1,133 @@
+/* Загальні стилі для всієї сторінки */
+body {
+    font-family: 'Segoe UI', sans-serif; /* Гарний сучасний шрифт */
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Світлий градієнтний фон */
+    margin: 0;
+    padding: 40px;
+}
+
+/* Заголовок сторінки */
+h1 {
+    text-align: center;       /* Центрування тексту */
+    font-size: 36px;          /* Розмір шрифту */
+    margin-bottom: 10px;      /* Відступ знизу */
+    color: #2c3e50;           /* Темно-сірий колір */
+}
+
+/* Підзаголовок / опис */
+p {
+    text-align: center;
+    color: #555;              /* Світло-сірий */
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Форма пошуку */
+form {
+    display: flex;            /* Розміщення в рядок */
+    justify-content: center; /* Центрування */
+    margin-bottom: 40px;
+}
+
+/* Поле введення для пошуку */
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;       /* Закруглені кути */
+    border: 1px solid #ccc;   /* Сіра рамка */
+}
+
+/* Контейнер для списку алгоритмів */
+.sections {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;          /* Перенос блоків у кілька рядків */
+    gap: 30px;                /* Відстань між блоками */
+}
+
+/* Картка алгоритму */
+.box {
+    background-color: white;
+    border-radius: 12px;       /* Закруглення */
+    padding: 25px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* М’яка тінь */
+    transition: transform 0.2s ease;           /* Анімація при наведенні */
+}
+
+/* Ефект при наведенні */
+.box:hover {
+    transform: scale(1.03);    /* Збільшення блока */
+}
+
+/* Посилання всередині картки */
+a {
+    text-decoration: none;     /* Без підкреслення */
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Категорія (під назвою алгоритму) */
+.category {
+    font-size: 14px;
+    color: #888;               /* Світло-сірий */
+    margin-top: 8px;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f9fb;                   /* Світлий фон */
+    margin: 0;
+    padding: 40px;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.section {
+    margin: 30px auto;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    margin-top: 0;
+    color: #34495e;
+}
+
+pre {
+    background-color: #ecf0f1; /* світло-сірий фон для коду */
+    padding: 15px;
+    border-left: 5px solid #3498db;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-radius: 5px;
+}
+
+.meta {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+.back-link:hover {
+    text-decoration: underline;
+}

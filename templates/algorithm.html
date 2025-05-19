@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ algo.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>{{ algo.name }}</h1>
+
+    <div class="section">
+        <h3>Опис</h3>
+        <p>{{ algo.description }}</p>
+    </div>
+
+    <div class="section">
+        <h3>Псевдокод</h3>
+        <pre>{{ algo.pseudocode }}</pre>
+    </div>
+
+    <div class="section">
+        <h3>Реалізація</h3>
+        <pre>{{ algo.implementation }}</pre>
+    </div>
+
+    <div class="section">
+        <p class="meta">Складність: {{ algo.complexity }}</p>
+        <p class="meta">Застосування: {{ algo.usage }}</p>
+    </div>
+
+    <a class="back-link" href="{{ url_for('index') }}">← Назад до каталогу</a>
+
+</body>
+</html>
