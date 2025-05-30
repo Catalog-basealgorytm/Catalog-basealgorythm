@@ -57,25 +57,22 @@
         }
     </style>
 </head>
-<body>
+<body class="index-page">
 
     <h1>Catalog-basealgorytm</h1>
-    <p>онлайн-каталог структур даних та алгоритмів</p>
+    <p class="site-description">онлайн-каталог структур даних та алгоритмів</p>
 
     <form method="get" action="/">
         <input type="text" name="search" placeholder="Пошук">
     </form>
-
     <div class="sections">
         {% for algo in algorithms %}
-        <div class="box">
-            <a href="{{ url_for('algorithm', id=algo.id) }}">
+        <div class="box"> <a href="{{ url_for('algorithm', id=algo.id) }}">
                 <div class="algo-title">{{ algo.name }}</div>
-                <div>{{ algo.category }}</div>
+                <div class="category">{{ algo.category }}</div>
             </a>
         </div>
         {% endfor %}
     </div>
-
 </body>
 </html>

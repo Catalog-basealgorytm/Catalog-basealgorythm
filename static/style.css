@@ -1,133 +1,287 @@
-/* Загальні стилі для всієї сторінки */
-body {
-    font-family: 'Segoe UI', sans-serif; /* Гарний сучасний шрифт */
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* Світлий градієнтний фон */
+/* --- Загальні стилі для основної сторінки каталогу --- */
+body.index-page { /* Додайте цей клас до <body> в index.html */
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif; /* Сучасний читабельний шрифт */
+    background: linear-gradient(to bottom right, #eef2f3, #f8f9fa); /* Світлий, м'який градієнт */
+    color: #333; /* Основний колір тексту */
     margin: 0;
-    padding: 40px;
+    padding: 30px 20px; /* Зменшимо бічні падінги для мобільних */
+    min-height: 100vh; /* Щоб фон заповнював весь екран по висоті */
+    box-sizing: border-box;
 }
 
-/* Заголовок сторінки */
-h1 {
-    text-align: center;       /* Центрування тексту */
-    font-size: 36px;          /* Розмір шрифту */
-    margin-bottom: 10px;      /* Відступ знизу */
-    color: #2c3e50;           /* Темно-сірий колір */
-}
-
-/* Підзаголовок / опис */
-p {
+/* Головний заголовок сторінки */
+body.index-page h1 {
     text-align: center;
-    color: #555;              /* Світло-сірий */
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 2.8em; /* Трохи більший для головної */
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #2c3e50; /* Темно-синьо-сірий */
+    font-weight: 700;
+}
+
+/* Підзаголовок / опис сайту */
+body.index-page .site-description { /* Додайте цей клас до <p> з описом */
+    text-align: center;
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 600px; /* Обмеження ширини для кращої читабельності */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Форма пошуку */
-form {
-    display: flex;            /* Розміщення в рядок */
-    justify-content: center; /* Центрування */
-    margin-bottom: 40px;
+body.index-page form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 /* Поле введення для пошуку */
-input[type="text"] {
-    padding: 10px;
-    width: 250px;
-    border-radius: 5px;       /* Закруглені кути */
-    border: 1px solid #ccc;   /* Сіра рамка */
+body.index-page input[type="text"] {
+    padding: 12px 18px; /* Збільшимо падінги */
+    width: 100%; /* Займає всю ширину батьківського елемента */
+    max-width: 400px; /* Обмеження максимальної ширини */
+    border-radius: 25px; /* Більш заокруглені кути для сучасного вигляду */
+    border: 1px solid #ddd;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Легка тінь */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.index-page input[type="text"]:focus {
+    border-color: #3498db; /* Акцентний колір при фокусі */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3); /* Тінь при фокусі */
+    outline: none; /* Прибираємо стандартний outline браузера */
 }
 
 /* Контейнер для списку алгоритмів */
 .sections {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;          /* Перенос блоків у кілька рядків */
-    gap: 30px;                /* Відстань між блоками */
+    justify-content: center; /* Можна 'space-around' або 'flex-start' якщо карток мало */
+    flex-wrap: wrap;
+    gap: 25px; /* Відстань між картками */
+    padding: 0 10px; /* Невеликий відступ для контейнера карток */
 }
 
 /* Картка алгоритму */
 .box {
-    background-color: white;
-    border-radius: 12px;       /* Закруглення */
-    padding: 25px;
-    width: 250px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* М’яка тінь */
-    transition: transform 0.2s ease;           /* Анімація при наведенні */
-}
-
-/* Ефект при наведенні */
-.box:hover {
-    transform: scale(1.03);    /* Збільшення блока */
-}
-
-/* Посилання всередині картки */
-a {
-    text-decoration: none;     /* Без підкреслення */
-    color: #2c3e50;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Категорія (під назвою алгоритму) */
-.category {
-    font-size: 14px;
-    color: #888;               /* Світло-сірий */
-    margin-top: 8px;
-}
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f7f9fb;                   /* Світлий фон */
-    margin: 0;
-    padding: 40px;
-    color: #2c3e50;
-}
-
-h1 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
-.section {
-    margin: 30px auto;
-    max-width: 800px;
     background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Закруглення */
+    padding: 20px;
+    width: 280px; /* Трохи ширші картки */
+    min-height: 100px; /* Мінімальна висота, щоб картки виглядали рівніше */
+    display: flex; /* Для вирівнювання вмісту */
+    flex-direction: column; /* Вміст розташовується вертикально */
+    justify-content: center; /* Центрування вмісту по вертикалі */
+    text-align: center; /* Центрування тексту всередині картки */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+    text-decoration: none; /* Якщо вся картка є посиланням */
+    color: inherit; /* Успадкування кольору тексту */
+}
+
+/* Ефект при наведенні на картку */
+.box:hover {
+    transform: translateY(-5px) scale(1.02); /* Легке підняття та збільшення */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Посилання всередині картки (якщо назва і категорія - це частина посилання) */
+.box a {
+    text-decoration: none;
+    color: inherit; /* Колір тексту успадковується від .box */
+}
+
+/* Заголовок алгоритму в картці */
+.algo-title { /* Якщо це клас для назви всередині <a> або <div class="box"> */
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* Категорія в картці */
+.category { /* Якщо це клас для категорії всередині <a> або <div class="box"> */
+    font-size: 0.9em;
+    color: #7f8c8d; /* Приглушений сірий */
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 600px) {
+    body.index-page {
+        padding: 20px 15px;
+    }
+    body.index-page h1 {
+        font-size: 2.2em;
+    }
+    body.index-page .site-description {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    body.index-page input[type="text"] {
+        width: 90%; /* Більша ширина на мобільних */
+        padding: 10px 15px;
+    }
+    .box {
+        width: 100%; /* Картки займають всю ширину на маленьких екранах */
+        max-width: 320px; /* Але не стають занадто широкими */
+        min-height: 90px;
+        padding: 15px;
+    }
+    .algo-title {
+        font-size: 1.15em;
+    }
+}
+//* --- Загальні стилі для сторінки алгоритму --- */
+body.algorithm-details-page { /* Додайте цей клас до <body> в algorithm.html */
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif; /* Сучасний читабельний шрифт */
+    background-color: #f4f7f6; /* Дуже світло-сірий, майже білий фон */
+    color: #333; /* Основний колір тексту */
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 30px 40px 30px; /* Зверху, праворуч, знизу, ліворуч */
+}
+
+/* Головний заголовок сторінки (назва алгоритму) */
+body.algorithm-details-page h1 {
+    text-align: center;
+    font-size: 2.5em; /* Збільшимо трохи */
+    color: #2c3e50; /* Колір як на скріншоті для заголовка */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #e0e0e0; /* Легка лінія під заголовком */
+}
+
+/* Секції контенту (Опис, Псевдокод, Реалізація, Складність, Застосування) */
+.section {
+    background-color: #ffffff; /* Білий фон для карток */
+    border-radius: 8px; /* Закруглені кути */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* М'якша, але помітна тінь */
+    padding: 25px 30px; /* Внутрішні відступи */
+    margin: 0 auto 30px auto; /* Центрування та відступ знизу */
+    max-width: 900px; /* Обмеження ширини для кращої читабельності */
 }
 
 .section h3 {
+    font-size: 1.6em;
+    color: #34495e; /* Темно-синьо-сірий для підзаголовків */
     margin-top: 0;
-    color: #34495e;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
 
+/* Стилі для абзаців опису, застосування */
+.section p {
+    font-size: 1em;
+    color: #444; /* Трохи темніший сірий для основного тексту */
+    text-align: justify; /* Вирівнювання по ширині */
+    hyphens: auto; /* Автоматичні переноси */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    margin-bottom: 15px;
+}
+
+.section p strong { /* Для виділення жирним у тексті */
+    color: #2c5b85; /* Акцентний синій */
+}
+
+/* Стилі для псевдокоду та коду реалізації */
 pre {
-    background-color: #ecf0f1; /* світло-сірий фон для коду */
-    padding: 15px;
-    border-left: 5px solid #3498db;
-    overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    white-space: pre-wrap;
-    word-break: break-word;
-    border-radius: 5px;
+    background-color: #282c34; /* Темний фон, популярний для коду */
+    color: #abb2bf; /* Світло-сірий текст коду */
+    padding: 20px;
+    border-radius: 6px;
+    overflow-x: auto; /* Горизонтальна прокрутка, якщо код довгий */
+    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace; /* Шрифти для коду з підтримкою лігатур */
+    font-size: 0.95em;
+    line-height: 1.5;
+    white-space: pre-wrap;   /* Збереження переносів та пробілів, але перенос довгих рядків */
+    word-break: break-all; /* Або 'break-word', залежно від того, як хочете переносити */
+    border: 1px solid #3e4451;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) inset; /* Внутрішня тінь */
 }
 
-.meta {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #555;
+/* Класи для підсвічування синтаксису (залежить від бібліотеки, наприклад Prism.js) */
+/* Наприклад: */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #608b4e; /* Коментарі - зеленуваті */
 }
 
+.token.keyword {
+    color: #c678dd; /* Ключові слова - фіолетові */
+}
+
+.token.operator,
+.token.punctuation {
+    color: #56b6c2; /* Оператори та пунктуація - бірюзові */
+}
+
+.token.function,
+.token.class-name {
+    color: #61afef; /* Функції та імена класів - сині */
+}
+
+.token.string {
+    color: #98c379; /* Рядки - світло-зелені */
+}
+
+.token.number {
+    color: #d19a66; /* Числа - помаранчеві */
+}
+/* ... та інші стилі для токенів з обраної вами бібліотеки підсвічування */
+
+
+/* Секція з мета-інформацією (Складність, Застосування) */
+.meta-section p { /* Якщо ви об'єднаєте їх в окрему секцію */
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.meta-section p strong { /* Для слів "Часова складність:", "Застосування:" */
+    color: #34495e;
+    display: block; /* Щоб опис був з нового рядка */
+    margin-bottom: 3px;
+}
+
+/* Посилання "Назад до каталогу" - тепер як кнопка */
 .back-link {
-    display: block;
-    text-align: center;
-    margin-top: 30px;
+    display: block; /* Займає всю доступну ширину контейнера */
+    width: fit-content; /* Ширина по вмісту */
+    margin: 40px auto 20px auto; /* Центрування та відступи */
+    padding: 12px 25px;
+    background-color: #3498db; /* Яскраво-синій */
+    color: white;
     text-decoration: none;
-    color: #3498db;
+    border-radius: 5px;
     font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .back-link:hover {
-    text-decoration: underline;
+    background-color: #2980b9; /* Темніший синій при наведенні */
+    transform: translateY(-1px); /* Легкий ефект підняття */
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+    body.algorithm-details-page {
+        padding: 15px;
+    }
+    body.algorithm-details-page h1 {
+        font-size: 2em;
+    }
+    .section {
+        padding: 20px;
+    }
+    pre {
+        font-size: 0.9em;
+    }
 }
